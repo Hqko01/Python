@@ -24,3 +24,4 @@ for i, idx in enumerate(a):
 print('-----------------------------')
 
 print(a[2:5])
+print(a[1:])
