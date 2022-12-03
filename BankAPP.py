@@ -13,10 +13,87 @@ def inquiry():
             time.sleep(1)
             loginPassword = input('Account Password: ')
             loginPassword = str(loginPassword)
-            time.sleep(2)
+            time.sleep(1)
             if loginName == Name:
                 if loginPassword == Password:
                     print('Logged!')
+
+                    def loged():
+                        Balance = 100    
+                        Balance = float(Balance)
+                        bankOptions = input('Balance, Withdraw, Deposit: ')
+                        if bankOptions == 'balance':
+                            time.sleep(1)
+
+                            print('Your Money:', Balance)
+                            def continueQS():
+                                continueQ = input('Do you want to continue processing?: ')
+        
+                                if continueQ == 'yes':
+                                    loged()
+
+                                elif continueQ == 'no':
+                                    print('Goodbye..')
+
+                                else:
+                                    print('False answer, yes or no')
+
+                            continueQS()
+
+                        elif bankOptions == 'withdraw':
+                            print('Your Money:', Balance)
+                            time.sleep(1)
+
+                            withdrawAmount = input('Enter amount to withdraw: ')
+                            withdrawAmount = float(withdrawAmount)
+                            lastBalance = (Balance - withdrawAmount)
+                            Balance = lastBalance
+
+                            print('Last Balance:', lastBalance)
+
+                            def continueQS():
+                                continueQ = input('Do you want to continue processing?: ')
+        
+                                if continueQ == 'yes':
+                                    loged()
+
+                                elif continueQ == 'no':
+                                    print('Goodbye..')
+
+                                else:
+                                    print('False answer, yes or no')
+
+                            continueQS()
+
+                        elif bankOptions == 'deposit':
+                            print('Your Money:', Balance)
+                            time.sleep(1)
+
+                            depositAmount = input('Enter amount to deposit: ')
+                            depositAmount = float(depositAmount)
+                            lastBalanceD = (Balance + depositAmount)
+                            Balance = lastBalanceD
+
+                            print('Your new money:', lastBalanceD)
+
+                            def continueQS():
+                                continueQ = input('Do you want to continue processing?: ')
+        
+                                if continueQ == 'yes':
+                                    loged()
+
+                                elif continueQ == 'no':
+                                    print('Goodbye..')
+                                else:
+                                    print('False answer, yes or no')
+
+                            continueQS()
+
+                        else:
+                            print('False answer, balance, withdraw or deposit')
+                            loged()
+                    loged()
+
                 else:
                     print('someone it`s wrong')
                     time.sleep(1)
@@ -57,10 +134,83 @@ def inquiry():
                 loginName = input('Account Name: ')
                 time.sleep(1)
                 loginPassword = input('Account Password: ')
-                time.sleep(2)
+                time.sleep(1)
                 if loginName == Name:
                     if loginPassword == Password:
                         print('Logged!')
+                        time.sleep(1)
+
+                        def loged():
+                            Balance = 0    
+                            Balance = float(Balance)
+                            bankOptions = input('Balance, Withdraw, Deposit: ')
+
+                            if bankOptions == 'balance':
+                                print('Your Money:', Balance)
+                                def continueQS():
+                                    continueQ = input('Do you want to continue processing?: ')
+        
+                                    if continueQ == 'yes':
+                                        loged()
+
+                                    elif continueQ == 'no':
+                                        print('Goodbye..')
+
+                                    else:
+                                        print('False answer, yes or no')
+
+                                continueQS()
+
+                            elif bankOptions == 'withdraw':
+                                print(Balance)
+
+                                withdrawAmount = input('Enter amount to withdraw: ')
+                                withdrawAmount = float(withdrawAmount)
+                                lastBalance = (Balance - withdrawAmount)
+                                Balance = lastBalance
+
+                                print('Last Balance:', lastBalance)
+
+                                def continueQS():
+                                    continueQ = input('Do you want to continue processing?: ')
+        
+                                    if continueQ == 'yes':
+                                        loged()
+
+                                    elif continueQ == 'no':
+                                        print('Goodbye..')
+
+                                    else:
+                                        print('False answer, yes or no')
+
+                                continueQS()
+
+                            elif bankOptions == 'deposit':
+                                print('Your Money:', Balance)
+                                depositAmount = input('Enter amount to deposit: ')
+                                depositAmount = float(depositAmount)
+                                lastBalanceD = (Balance + depositAmount)
+                                Balance = lastBalanceD
+
+                                print('Your new money:', lastBalanceD)
+
+                                def continueQS():
+                                    continueQ = input('Do you want to continue processing?: ')
+        
+                                    if continueQ == 'yes':
+                                        loged()
+
+                                    elif continueQ == 'no':
+                                        print('Goodbye..')
+                                    else:
+                                        print('False answer, yes or no')
+
+                                continueQS()
+
+                            else:
+                                print('False answer, balance, withdraw or deposit')
+                                loged()
+                        loged()
                     else:
                         print('someone it`s wrong')
                         time.sleep(1)
@@ -85,6 +235,7 @@ def inquiry():
         else:
             print('Goodbye..')
     else: 
-        print('yes or no')
+        print('False answer, yes or no')
         inquiry()
+
 inquiry()
